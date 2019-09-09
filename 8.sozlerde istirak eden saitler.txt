@@ -1,0 +1,25 @@
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+       let vowelWord =findVowelsInWord(element);
+       console.log(element+" -> "+vowelWord);
+      }
+ 
+}
+}
+
+function findVowelsInWord(word){
+  let vowels=["A","a","I","i","o","O","U","u","e","E"];
+  let newWord="";
+      for(let letter of word){
+        for(let vowel of vowels){
+          if(letter == vowel){
+            newWord+=letter+" ";
+          }
+        }
+      }
+      return newWord;
+      }

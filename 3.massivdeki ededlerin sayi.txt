@@ -1,0 +1,13 @@
+
+function findCountElements(array){
+let count =0;
+    for(let element of array){
+    if(typeof element=="object"){
+      count+=findCountElements(element);
+    }else if(typeof element=="number"){
+      
+      count++;
+      }
+  }
+  return count;
+}

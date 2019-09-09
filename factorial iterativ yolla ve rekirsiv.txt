@@ -1,0 +1,35 @@
+//while ile
+function calculateFactorialIterativ(number){
+  let fact=1;
+  if(number==0){
+    return fact;
+  }else{
+    while(number>0){
+    fact*=number;
+    number--;
+  }
+  return fact;
+  }
+}
+//for ile
+function calculateFactorialIterativ(number){
+  let fact=1;
+  if(number==0){
+    return fact;
+  }else{
+    for(i=number;i>0;i--){
+    fact*=i;
+  }
+  return fact;
+  }
+}
+//recursiv
+function calculateFactorial(number){
+  if(number>0){
+    return number*calculateFactorial(number-1);
+  }
+  else{
+    return 1;
+  }
+  
+}

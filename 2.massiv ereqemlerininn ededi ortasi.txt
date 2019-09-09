@@ -1,0 +1,28 @@
+function findCountElements(array){
+let count =0;
+    for(let element of array){
+    if(typeof element=="object"){
+      findCountElements(element);
+    }else if(typeof element=="number"){
+      
+      count++;
+      }
+  }
+  return count;
+}
+function SumElements(array){
+  let sum=0;
+  for(let element of array){
+    if(typeof element=="object"){
+      sum+=SumElements(element);
+    }else if(typeof element=="number"){
+      sum+=element;
+    }
+  }
+  return sum;
+}
+function findAverage(array){
+  let sum=SumElements(array);
+  let count=findCountElements(array);
+  return sum/count;
+}

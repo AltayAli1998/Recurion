@@ -1,0 +1,21 @@
+
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+       let word =chabgeOpposite(element);
+       console.log(element+" -> "+word);
+      }
+ 
+}
+}
+
+function chabgeOpposite(word){
+      let newWord="";
+      for(let i=word.length-1;i>=0;i--){
+        newWord+=word[i];
+      }
+      return newWord;
+      }

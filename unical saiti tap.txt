@@ -1,0 +1,39 @@
+
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+      
+       let vowels= isUnicals(element);
+       if(vowels.length>0){
+      console.log(element+" -> "+vowels);
+       }
+       else{
+         console.log(element+ " sozunde unikal sait yoxdur");
+       }
+      
+      }
+ 
+}
+}
+function isUnicals(word){
+  let _isUnical=false;
+  let unicalWord="";
+  let vowels=['a','A','u','U','i','I','O','o','e','E'];
+    for(let vowel of vowels){
+    let count =0;
+      for(let letter of word){
+      if(letter==vowel){
+        count++;
+      }
+     }
+    if(count==1){
+      unicalWord+=vowel+" ";
+       _isUnical=true;
+       
+      }
+  }
+   return unicalWord;
+}

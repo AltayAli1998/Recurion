@@ -1,0 +1,25 @@
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+       let vowelWord =changeSmallToBig(element);
+       console.log(element+" -> "+vowelWord);
+      }
+ 
+}
+}
+function changeSmallToBig(element){
+      let word="";
+      for(let letter of element){
+        let example=letter.charCodeAt();
+         if(example>96&&example<123){
+           word+=String.fromCharCode(example-32);
+        }
+        else{
+          word+=letter;
+        }
+      }
+      return word;
+}

@@ -1,0 +1,19 @@
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+       let count =findCountLetterinWord(element);
+       console.log(element+" -> "+count);
+      }
+ 
+}
+}
+function findCountLetterinWord(word){
+let count =0;
+for(let i of word){
+  count++;
+}
+return count;
+}

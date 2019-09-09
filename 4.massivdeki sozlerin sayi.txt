@@ -1,0 +1,12 @@
+
+function findWordsElements(array){
+let count =0;
+    for(let element of array){
+    if(typeof element=="object"){
+       count+=findWordsElements(element);
+    }else if(typeof element=="string"){
+       count++;
+      }
+  }
+  return count;
+}

@@ -1,0 +1,21 @@
+
+function findWordsElements(array){
+
+    for(let element of array){
+    if(typeof element=="object"){
+       findWordsElements(element);
+    }else if(typeof element=="string"){
+       let word =getHexForWord(element);
+       console.log(element+" -> "+word);
+      }
+ 
+}
+}
+
+function getHexForWord(word){
+      let newWord="";
+      for(let letter of word){
+        newWord+=letter.charCodeAt().toString(16)+" ";
+      }
+      return newWord;
+      }
